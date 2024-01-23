@@ -1,6 +1,6 @@
 <script lang="ts">
   import Question from "components/question.svelte";
-  const Questions = ["1quest", "2quest"]
+  const Questions = ["1quest", "2quest", "женя"]
 
   function giveAnswer(answer : number) {
     console.log(answer);
