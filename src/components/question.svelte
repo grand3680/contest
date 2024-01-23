@@ -3,12 +3,13 @@ import { createEventDispatcher } from 'svelte'
 import Card from './card.svelte';
 
 const dispatch = createEventDispatcher<{
-    giveAnswer : string
+    giveAnswer : number
 }>()
 
-export let idStr : string;
+export let questions : string[];
+console.log(questions);
 
-function giveAnswer(id : string) : any {
+function giveAnswer(id : number) : any {
     dispatch("giveAnswer", id)	
 }
 
@@ -16,13 +17,26 @@ function giveAnswer(id : string) : any {
 
 <div class="question">
     <h1 class="question-title"><slot></slot></h1>
-    <Card idStr={idStr} on:openCard={(e) => {alert(e.detail)}}>test val</Card>
+    <span class="questions">
+        {#each questions as question, index}
+        {index}
+        <Card text={question} idStr={index} on:openCard={(e) => {giveAnswer(e.detail)}}></Card>
+        {/each}
+    </span>
+
+
 </div>  
     
 <style lang="sass">
     .question-title
         font-size: 50px
-        color: white
+        color: black
+        font-family: Arial, Helvetica, sans-serif
+    .questions
+        text-align: center
+        margin: 10px 10px
+        padding: 0 20px
+        display: flex
 
 </style>
     

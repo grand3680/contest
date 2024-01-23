@@ -1,15 +1,16 @@
 <script lang="ts">
   import Question from "components/question.svelte";
-  import { ENV_OBJ } from "lib/env";
+  const Questions = ["1quest", "2quest"]
 
-  const URL = ENV_OBJ.URL;
-  const Questions = ["some", "some"]
+  function giveAnswer(answer : number) {
+    console.log(answer);
+  }
 
 </script>
 
 <main>    
   <div class="content">
-    <Question idStr="1" titleQuestion="example Question" questions={Questions} on:openCard={(e) => {console.log(e.detail)}}></Card>
+    <Question on:giveAnswer={(e) => giveAnswer(e.detail)} questions={Questions} on:openCard={(e) => {console.log(e.detail)}}>some question</Question>
   </div>
 </main>
 

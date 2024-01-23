@@ -2,12 +2,13 @@
 import { createEventDispatcher } from 'svelte'
 
 const dispatch = createEventDispatcher<{
-    openCard : string
+    openCard : number
 }>()
 
-export let idStr : string;
+export let idStr : number;
+export let text : string;
 
-function openCard(id : string) : any {
+function openCard(id : number) : any {
     dispatch("openCard", id)	
 }
 
@@ -15,7 +16,7 @@ function openCard(id : string) : any {
 
 <div class="card">  
     <h1 class="answer">
-        <slot></slot>
+        {text}
     </h1>
     <button class="button-card" on:click={() => openCard(idStr)}>click me</button>
 </div>  
@@ -34,6 +35,7 @@ function openCard(id : string) : any {
 
     .card
         padding: 5px 25px
+        margin: 10px
         height: 200px
         width: 180px
         border-radius: 5px
