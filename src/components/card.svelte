@@ -12,7 +12,6 @@ export let linkSrc : string = "";
 function openCard(id : number) : any {
     dispatch("openCard", id)	
 }
-
 </script>
 
 <div class="card">  
@@ -27,46 +26,46 @@ function openCard(id : number) : any {
 </div>  
 
 <style lang="sass">
-    .imgCard  
-        width: 100% !important
-        height: 100% !important
+.imgCard  
+    width: 100% !important
+    height: 100% !important
 
-    .button-card
-        position: absolute
-        bottom: 10px
-        left : 30px
+.button-card
+    position: absolute
+    bottom: 10px
+    left : 30px
 
-        border : gray 1px solid
-        padding: 0 25px
-        width : 100px
-        height: 25px
-        background-color: black
-        color: white
-        opacity: 0.9
-        cursor: pointer
-        transition: all .5s
-        &:hover
-            transform: scale(1.25)
-            opacity: 0.7
+    border : gray 1px solid
+    padding: 0 25px
+    width : 100px
+    height: 25px
+    background-color: black
+    color: white
+    opacity: 0.9
+    cursor: pointer
+    transition: all .5s
+    &:hover
+        transform: scale(1.25)
+        opacity: 0.7
 
+.answer
+    color : black
+    font-size: 25px
+    font-family: sans-serif
 
-    .answer
-        color : black
-        font-size: 25px
-        font-family: sans-serif
-
-    .card
-        position: relative
-        justify-content: center
-        text-align: center
-        padding: 5px 25px
-        margin: 10px
-        height: 350px
-        width: 280px
-        border-radius: 5px
-        border: 2px solid gray
-        background-color: #37aadb2d
-
-
+.card
+    position: relative
+    justify-content: center
+    text-align: center
+    padding: 5px 25px
+    margin: 10px
+    height: 350px
+    width: 280px
+    border-radius: 5px
+    border: 2px solid gray
+    background-color: #37aadb2d
+    transition: all .1s
+    &:hover
+        box-shadow: 0px 0px 10px .2px gray
+        transform: scale(1.01)
 </style>
-  

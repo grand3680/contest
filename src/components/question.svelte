@@ -6,9 +6,8 @@ const dispatch = createEventDispatcher<{
     giveAnswer : number
 }>()
 
-export let questions : string[];
+export let questions : any;
 console.log(questions);
-let imgSrc = "https://cloudmakers.ru/wp-content/uploads/2018/05/800x600_mixed.png";
 
 function giveAnswer(id : number) : any {
     dispatch("giveAnswer", id)	
@@ -21,7 +20,7 @@ function giveAnswer(id : number) : any {
     <span class="questions">
         {#each questions as question, index}
         {index}
-        <Card text={question} idStr={index} linkSrc={imgSrc} on:openCard={(e) => {giveAnswer(e.detail)}}></Card>
+        <Card text={question.title} idStr={index} linkSrc={question.src} on:openCard={(e) => {giveAnswer(e.detail)}}></Card>
         {/each}
     </span>
 </div>  
