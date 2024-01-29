@@ -7,6 +7,8 @@ const dispatch = createEventDispatcher<{
 }>()
 
 export let questions : any;
+export let questionsTitle : string;
+
 console.log(questions);
 
 function giveAnswer(id : number) : any {
@@ -16,10 +18,9 @@ function giveAnswer(id : number) : any {
 </script>
 
 <div class="question">
-    <h1 class="question-title"><slot></slot></h1>
+    <h1 class="question-title">{questionsTitle}</h1>
     <span class="questions">
         {#each questions as question, index}
-        {index}
         <Card text={question.title} idStr={index} linkSrc={question.src} on:openCard={(e) => {giveAnswer(e.detail)}}></Card>
         {/each}
     </span>
@@ -28,7 +29,8 @@ function giveAnswer(id : number) : any {
 <style lang="sass">
     .question-title
         font-size: 50px
-        color: black
+        color: #133955
+        margin-bottom: 40px
         font-family: Arial, Helvetica, sans-serif
     .questions
         text-align: center

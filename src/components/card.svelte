@@ -50,8 +50,11 @@ function openCard(id : number) : any {
 
 .answer
     color : black
-    font-size: 25px
+    font-size: 30px
     font-family: sans-serif
+    color: #E0FFFF
+    text-shadow: 1px 2px 6px rgba(207,95,95,0.24)
+    font-weight: 600
 
 .card
     position: relative
@@ -61,10 +64,13 @@ function openCard(id : number) : any {
     margin: 10px
     height: 350px
     width: 280px
-    border-radius: 5px
-    border: 2px solid gray
+    border-radius: 15px
+    -webkit-box-shadow: 0px 0px 10px 7px rgba(34, 60, 80, 0.2)
+    -moz-box-shadow: 0px 0px 10px 7px rgba(34, 60, 80, 0.2)
+    box-shadow: 0px 0px 10px 7px rgba(34, 60, 80, 0.2)
+
     background-color: #37aadb2d
-    transition: all .1s
+    transition: all .15s
     &:hover
         box-shadow: 0px 0px 10px .2px gray
         transform: scale(1.01)

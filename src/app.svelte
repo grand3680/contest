@@ -5,12 +5,15 @@
 
   console.log("1 -- ", someQuest);
   const Questions : any[] = someQuest;
+  let correctAnswer : number = 0;
 
   let CurrentIndex = 0;
 
 
   function giveAnswer(answer : number) {
-    console.log(answer);
+    if (Questions[CurrentIndex][answer].correctAnsw === true) correctAnswer++;
+    console.log("some - ", correctAnswer);
+
     CurrentIndex += 1;
   }
 
@@ -19,10 +22,10 @@
 <main>    
   {#if CurrentIndex + 1 <= Questions.length}
   <div class="content">
-    <Question on:giveAnswer={(e) => giveAnswer(e.detail)} questions={Questions[CurrentIndex]} on:openCard={(e) => {console.log(e.detail)}}>some question</Question>
+    <Question on:giveAnswer={(e) => giveAnswer(e.detail)} questionsTitle={"some question"} questions={Questions[CurrentIndex]}/>
   </div>
   {:else}
-    <h1>end</h1>
+    <h1>end, you Questions {correctAnswer} / {Questions.length}</h1>
   {/if}
 
 
