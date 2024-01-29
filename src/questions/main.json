@@ -1,0 +1,27 @@
+[
+    [
+    {
+        "title" : "first titme",
+        "src" : "https://cloudmakers.ru/wp-content/uploads/2018/05/800x600_mixed.png"
+    },
+    {
+        "title" : "second time"
+    },
+    {
+        "title" : "third time"
+    }
+    ],
+    [
+        {
+            "title" : "2first titme",
+            "src" : "https://cloudmakers.ru/wp-content/uploads/2018/05/800x600_mixed.png"
+        },
+        {
+            "title" : "2second time"
+        },
+        {
+            "title" : "2third time"
+        }
+    ]
+
+]

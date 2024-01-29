@@ -1,25 +1,32 @@
 <script lang="ts">
   import Question from "components/question.svelte";
+  import ProcentBar from "components/procentBar.svelte";
+  import someQuest from "questions/main.json"
 
+  console.log("1 -- ", someQuest);
+  const Questions : any[] = someQuest;
 
-  let imgSrc = "https://cloudmakers.ru/wp-content/uploads/2018/05/800x600_mixed.png";
+  let CurrentIndex = 0;
 
-  const Questions : any[] = [
-    {title : "1quest", src : imgSrc}, 
-    {title : "2quest"}, 
-    {title : "122112"}
-  ];
 
   function giveAnswer(answer : number) {
     console.log(answer);
+    CurrentIndex += 1;
   }
 
 </script>
 
 <main>    
+  {#if CurrentIndex + 1 <= Questions.length}
   <div class="content">
-    <Question on:giveAnswer={(e) => giveAnswer(e.detail)} questions={Questions} on:openCard={(e) => {console.log(e.detail)}}>some question</Question>
+    <Question on:giveAnswer={(e) => giveAnswer(e.detail)} questions={Questions[CurrentIndex]} on:openCard={(e) => {console.log(e.detail)}}>some question</Question>
   </div>
+  {:else}
+    <h1>end</h1>
+  {/if}
+
+
+  <ProcentBar lengQuestion={Questions.length} CurrentIndex={CurrentIndex + 1}/>
 </main>
 
 <style lang="sass">
