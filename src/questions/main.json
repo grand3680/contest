@@ -1,29 +1,193 @@
 [
-    [ 
+    [  
         {
-            "title" : "first titme",
-            "src" : "https://cloudmakers.ru/wp-content/uploads/2018/05/800x600_mixed.png"
-        },
-        {
-            "title" : "second time",
-            "correctAnsw" : true
-        },
-        {
-            "title" : "third time"
-        }                 
-       
+            "title" : "Каким годом датируется первое упоминание о Полоцке — первом известном племенном центре на территории современной Республики Беларусь?",
+            "questions" : [
+                {
+                    "title" : "1003 годом",
+                    "correctAnsw" : false
+                },
+                {
+                    "title" : "862 годом",
+                    "correctAnsw" : true
+                },
+                {
+                    "title" : "799 годом",
+                    "correctAnsw" : false
+                }              
+            ]            
+        }
+
     ],
-    [
+    [  
         {
-            "title" : "2first titme",
-            "src" : "https://cloudmakers.ru/wp-content/uploads/2018/05/800x600_mixed.png"
-        },
+            "title" : "В каких областях Беларуси найдены три среднепалеолитических кремнёвых изделия?",
+            "questions" : [
+                {
+                    "title" : "В Витебской и Минской",
+                    "correctAnsw" : false
+                },
+                {
+                    "title" : "В Брестской и Гродненской",
+                    "correctAnsw" : false
+                },
+                {
+                    "title" : "В Могилёвской и Гомельской",
+                    "correctAnsw" : true
+                }              
+            ]            
+        }
+    ],
+    [  
         {
-            "title" : "2second time"
-        },
+            "title" : "В каком тысячелетии индоевропейцы начали проникать на территорию современной Беларуси?",
+            "questions" : [
+                {
+                    "title" : "в 1-м тысячелетии до н. э.",
+                    "correctAnsw" : false
+                },
+                {
+                    "title" : "в 3-м тысячелетии до н. э.",
+                    "correctAnsw" : true
+                },
+                {
+                    "title" : "в 5-м тысячелетии до н. э.",
+                    "correctAnsw" : false
+                }              
+            ]            
+        }
+    ],
+    [  
         {
-            "title" : "2third time"
+            "title" : "На базе каких трёх славянских этнических общностей происходило формирование белорусского этноса?",
+            "questions" : [
+                {
+                    "title" : "Кривичи, Дреговичи, Радимичи",
+                    "correctAnsw" : true
+                },
+                {
+                    "title" : "Поляне, Дулебы, Древляне",
+                    "correctAnsw" : false
+                },
+                {
+                    "title" : "Летгалы, Земгалы, Ятвиги",
+                    "correctAnsw" : false
+                }              
+            ]            
+        }
+    ],
+    [  
+        {
+            "title" : "5Какой период начался на территории Беларуси после схождения последнего ледника?",
+            "questions" : [
+                {
+                    "title" : "Палеолит",
+                    "correctAnsw" : false
+                },
+                {
+                    "title" : "Неолит",
+                    "correctAnsw" : false
+                },
+                {
+                    "title" : "Мезолит",
+                    "correctAnsw" : true
+                }              
+            ]            
+        }
+    ],
+    [  
+        {
+            "title" : "Каким княжеством управлял Рогволод?",
+            "questions" : [
+                {
+                    "title" : "Турово-Пинским",
+                    "correctAnsw" : false
+                },
+                {
+                    "title" : "Полоцким",
+                    "correctAnsw" : true
+                },
+                {
+                    "title" : "Городенским",
+                    "correctAnsw" : false
+                }              
+            ]            
+        }
+    ],
+    [  
+        {
+            "title" : "Начало какому государству положил литовский князь Миндовг?",
+            "questions" : [
+                {
+                    "title" : "Великое княжество Литовское",
+                    "correctAnsw" : true
+                },
+                {
+                    "title" : "Речь Посполитая",
+                    "correctAnsw" : false
+                },
+                {
+                    "title" : "Киевская Русь",
+                    "correctAnsw" : false
+                }              
+            ]            
+        }
+    ],
+    [  
+        {
+            "title" : "В каком году была заключена Брестская церковная уния, которая подчинила православную церковь на территории Речи Посполитой римскому папе?",
+            "questions" : [
+                {
+                    "title" : "В 1596",
+                    "correctAnsw" : true
+                },
+                {
+                    "title" : "В 1410",
+                    "correctAnsw" : false
+                },
+                {
+                    "title" : "В 1696",
+                    "correctAnsw" : false
+                }              
+            ]            
+        }
+    ],
+    [  
+        {
+            "title" : "Как называлась народническая группа, которая первой выдвинула идею самостоятельности белорусского народа?",
+            "questions" : [
+                {
+                    "title" : "«Наша нива»",
+                    "correctAnsw" : false
+                },
+                {
+                    "title" : "«Громада»",
+                    "correctAnsw" : false
+                },
+                {
+                    "title" : "«Гомон»",
+                    "correctAnsw" : true
+                }              
+            ]            
+        }
+    ],
+    [  
+        {
+            "title" : "В каком году Беларусь стало независимым государством?",
+            "questions" : [
+                {
+                    "title" : "В 1995 году",
+                    "correctAnsw" : false
+                },
+                {
+                    "title" : "В 2001 году",
+                    "correctAnsw" : false
+                },
+                {
+                    "title" : "В 1991 году",
+                    "correctAnsw" : true
+                }              
+            ]            
         }
     ]
-
 ]

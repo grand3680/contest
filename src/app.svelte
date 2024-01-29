@@ -8,10 +8,11 @@
   let correctAnswer : number = 0;
 
   let CurrentIndex = 0;
-
+  console.log(Questions[0][0].titleBig);
+  console.log(Questions[CurrentIndex].questions);
 
   function giveAnswer(answer : number) {
-    if (Questions[CurrentIndex][answer].correctAnsw === true) correctAnswer++;
+    if (Questions[CurrentIndex][0].questions[answer].correctAnsw === true) correctAnswer++;
     console.log("some - ", correctAnswer);
 
     CurrentIndex += 1;
@@ -22,7 +23,7 @@
 <main>    
   {#if CurrentIndex + 1 <= Questions.length}
   <div class="content">
-    <Question on:giveAnswer={(e) => giveAnswer(e.detail)} questionsTitle={"some question"} questions={Questions[CurrentIndex]}/>
+    <Question on:giveAnswer={(e) => giveAnswer(e.detail)} questionsTitle={Questions[CurrentIndex][0].title} questions={Questions[CurrentIndex][0].questions}/>
   </div>
   {:else}
     <h1>end, you Questions {correctAnswer} / {Questions.length}</h1>

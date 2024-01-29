@@ -21,7 +21,7 @@ function giveAnswer(id : number) : any {
     <h1 class="question-title">{questionsTitle}</h1>
     <span class="questions">
         {#each questions as question, index}
-        <Card text={question.title} idStr={index} linkSrc={question.src} on:openCard={(e) => {giveAnswer(e.detail)}}></Card>
+        <Card text={question.title} idStr={index} linkSrc={question.src} on:openCard={(e) => {giveAnswer(e.detail)}}/>
         {/each}
     </span>
 </div>  
