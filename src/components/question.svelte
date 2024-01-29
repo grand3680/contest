@@ -28,9 +28,12 @@ function giveAnswer(id : number) : any {
     
 <style lang="sass">
     .question-title
+        width: 80%
+        margin: 0 auto
+        word-wrap: break-word
         font-size: 50px
         color: #133955
-        margin-bottom: 40px
+        margin-bottom: 125px
         font-family: Arial, Helvetica, sans-serif
     .questions
         text-align: center

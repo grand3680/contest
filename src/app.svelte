@@ -1,4 +1,5 @@
 <script lang="ts">
+	import Game from './components/game.svelte';
   import Question from "components/question.svelte";
   import ProcentBar from "components/procentBar.svelte";
   import someQuest from "questions/main.json"
@@ -29,6 +30,7 @@
     <h1>end, you Questions {correctAnswer} / {Questions.length}</h1>
   {/if}
 
+  <!-- <Game/> -->
 
   <ProcentBar lengQuestion={Questions.length} CurrentIndex={CurrentIndex + 1}/>
 </main>

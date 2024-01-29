@@ -22,7 +22,9 @@ function openCard(id : number) : any {
         {text}
         
     </h1>
-    <button class="button-card" on:click={() => openCard(idStr)}>click me</button>
+    <div class="button-block">
+        <button class="button-card" on:click={() => openCard(idStr)}>ответить</button>
+    </div>
 </div>  
 
 <style lang="sass">
@@ -30,22 +32,35 @@ function openCard(id : number) : any {
     width: 100% !important
     height: 100% !important
 
-.button-card
-    position: absolute
-    bottom: 10px
-    left : 30px
 
+.button-block
+    position: absolute
+    width: 100%
+    bottom: 0
+    left: 0
+    display: flex
+    align-items: center
+    justify-content: center    
+    text-align: center 
+
+
+.button-card
     border : gray 1px solid
+    border-radius: 10px 10px 1px 1px
+    text-align: center
+    font-size: 20px
     padding: 0 25px
-    width : 100px
-    height: 25px
-    background-color: black
+    width : 80%
+    height: 35px
+    background-color: #133955
     color: white
     opacity: 0.9
     cursor: pointer
     transition: all .5s
+    opacity: 0.8
+
     &:hover
-        transform: scale(1.25)
+        transform: scale(1.15)
         opacity: 0.7
 
 .answer
@@ -58,6 +73,8 @@ function openCard(id : number) : any {
 
 .card
     position: relative
+    display: inline-block
+
     justify-content: center
     text-align: center
     padding: 5px 25px
