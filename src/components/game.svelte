@@ -23,19 +23,19 @@
       dy: number;
     }
   
-    let player: Player = { x: 5, y: 5, hp: 100, lastDirection: { dx: 0, dy: 0 } };
+    let player: Player = { x: 5, y: 10, hp: 100, lastDirection: { dx: 0, dy: 0 } };
     let enemy: Enemy = { x: 3, y: 3, hp: 50 };
     let bullets: Bullet[] = [];
     let bulletId = 0;
     let message: string = '';
     let gameOver: boolean = false;
-  
+    const gridSize : number = 15;
 
-    const walls = [
-      ...Array.from({ length: 10 }, (_, i) => ({ x: i, y: 0 })),
-      ...Array.from({ length: 10 }, (_, i) => ({ x: i, y: 9 })),
-      ...Array.from({ length: 8 }, (_, i) => ({ x: 0, y: i + 1 })),
-      ...Array.from({ length: 8 }, (_, i) => ({ x: 9, y: i + 1 })),
+    let walls = [
+      ...Array.from({ length: gridSize }, (_, i) => ({ x: i, y: 0, breakable : false})),
+      ...Array.from({ length: gridSize }, (_, i) => ({ x: i, y: gridSize-1, breakable : false})),
+      ...Array.from({ length: gridSize-2 }, (_, i) => ({ x: 0, y: i + 1, breakable : false})),
+      ...Array.from({ length: gridSize-2 }, (_, i) => ({ x: gridSize-1, y: i + 1, breakable : false})),
       { x: 1, y: 1, breakable: true },
       { x: 2, y: 1, breakable: true },
       { x: 3, y: 1, breakable: true },
@@ -56,7 +56,7 @@
   
     onMount(() => {
       window.addEventListener('keydown', handleKeyDown);
-      setInterval(moveBullets, 200); // Slower bullet movement
+      setInterval(moveBullets, 400); // Slower bullet movement
     });
   
     function handleKeyDown(event: KeyboardEvent) {
@@ -87,7 +87,7 @@
       const newX = player.x + dx;
       const newY = player.y + dy;
   
-      if (!gameOver && newX >= 0 && newX < 10 && newY >= 0 && newY < 10 && !isWall(newX, newY)) {
+      if (!gameOver && newX >= 0 && newX < gridSize && newY >= 0 && newY < gridSize && !isWall(newX, newY)) {
         player.x = newX;
         player.y = newY;
         player.lastDirection = { dx, dy };
@@ -119,10 +119,10 @@
     }
   
     function checkHit(bullet: Bullet) {
-      if (bullet.x < 0 || bullet.x >= 10 || bullet.y < 0 || bullet.y >= 10 || isWall(bullet.x, bullet.y)) {
+      if (bullet.x < 0 || bullet.x >= gridSize || bullet.y < 0 || bullet.y >= gridSize || isWall(bullet.x, bullet.y)) {
         const wallIndex = walls.findIndex(wall => wall.x === bullet.x && wall.y === bullet.y && wall.breakable);
         if (wallIndex !== -1) {
-          walls.splice(wallIndex, 1); // Remove breakable wall
+            walls.splice(wallIndex, 1); // Remove breakable wall
         }
         bullets = bullets.filter(b => b !== bullet); // Remove bullet if it hits a wall or goes out of bounds
         return;
@@ -147,75 +147,67 @@
     }
   </script>
   
-  <style lang="scss">
-    .container {
-      text-align: center;
-      margin-top: 50px;
-    }
-    .button {
-      margin-top: 20px;
-      padding: 10px 20px;
-      font-size: 16px;
-      cursor: pointer;
-    }
-    .map {
-      position: relative;
-      display: grid;
-      grid-template-columns: repeat(10, 50px);
-      grid-template-rows: repeat(10, 50px);
-      margin-top: 20px;
-    }
-    .cell {
-      width: 50px;
-      height: 50px;
-      border: 1px solid #ccc;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-    .wall {
-      background-color: black;
-    }
-    .bullet {
-      position: absolute;
-      width: 10px;
-      height: 10px;
-      background-color: red;
-      animation: moveBullet 0.2s linear infinite;
-    }
-    @keyframes moveBullet {
-      0% { transform: scale(0.8); }
-      50% { transform: scale(1.2); }
-      100% { transform: scale(0.8); }
-    }
-  </style>
-  
-  <div class="container">
-    <h1>Battle Game</h1>
-    <div>
-      <p>Your HP: {player.hp}</p>
-      <p>Enemy HP: {enemy.hp}</p>
-      <p>{message}</p>
-    </div>
-    <div class="map">
-      <!-- {#each walls as cell}
-        <div class="cell" class:wall={isWall(cell.x, cell.y)}></div>
-      {/each} -->
+<style lang="sass">
 
-      {#each Array(10) as _, row}
-        {#each Array(10) as _, col}
-                <div class="cell" class:wall={isWall(col, row)}></div>
-            {/each}
-        {/each}
+.container 
+    text-align: center 
+    margin-top: 50px 
+.button 
+    margin-top: 20px 
+    padding: 10px 20px 
+    font-size: 16px 
+    cursor: pointer 
+.map 
+    position: relative 
+    width: auto 
+    margin-top: 20px 
+.cell 
+    position: absolute 
+    width: 50px 
+    height: 50px 
+    border: 1px solid #ccc 
+    display: flex 
+    justify-content: center 
+    align-items: center 
+.wall 
+    background-color: #556B2F 
+.nonBrekingWall 
+    background-color: #B22222 !important 
+.bullet 
+    position: absolute 
+    width: 15px 
+    height: 15px 
+    background-color: red 
+    animation: moveBullet 0.2s linear infinite 
 
-      <Tank x={player.x} y={player.y} />
-      <Tank x={enemy.x} y={enemy.y} />
-      {#each bullets as bullet}
-        <div class="bullet" style="left: {bullet.x * 50}px; top: {bullet.y * 50}px;"></div>
-      {/each}
-    </div>
-    <div>
-      <button on:click={reset}>Reset</button>
-    </div>
-  </div>
-  
+@keyframes moveBullet 
+    0% 
+        transform: scale(0.8)
+    50% 
+        transform: scale(1.2)
+    100% 
+        transform: scale(0.8)
+</style>
+
+<div class="container">
+<h1>Battle Game</h1>
+<div>
+    <p>Your HP: {player.hp}</p>
+    <p>Enemy HP: {enemy.hp}</p>
+    <p>{message}</p>
+</div>
+<div class="map">
+    {#each walls as cell}
+    <div class="cell wall" style="left: {cell.x * 50}px; top: {cell.y * 50}px;" class:nonBrekingWall={cell.breakable}></div>
+    {/each}
+
+    <Tank x={player.x} y={player.y} />
+    <Tank x={enemy.x} y={enemy.y} />
+    {#each bullets as bullet}
+    <div class="bullet" style="left: {bullet.x * 50}px; top: {bullet.y * 50}px;"></div>
+    {/each}
+</div>
+<div>
+    <button on:click={reset}>Reset</button>
+</div>
+</div>

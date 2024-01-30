@@ -1,5 +1,6 @@
 <script lang="ts">
 import { createEventDispatcher } from 'svelte'
+import * as images from "images/index"
 
 const dispatch = createEventDispatcher<{
     openCard : number
@@ -7,7 +8,13 @@ const dispatch = createEventDispatcher<{
 
 export let idStr : number;
 export let text : string;
-export let linkSrc : string = "";
+export let linkSrc : any;
+
+console.log(linkSrc);
+let linkSrcImg : any = images[linkSrc] ?? "";
+
+
+console.log(linkSrc, linkSrcImg);
 
 function openCard(id : number) : any {
     dispatch("openCard", id)	
@@ -15,13 +22,15 @@ function openCard(id : number) : any {
 </script>
 
 <div class="card">  
-    <h1 class="answer">
-        {#if linkSrc}
-        <img class="imgCard" src="{linkSrc}" alt="">
+    <div class="answer">
+        {#if linkSrcImg}
+        <img class="imgCard" src={linkSrcImg} alt="">
         {/if}
-        {text}
-        
-    </h1>
+        {#if text}
+        <h1 class="answer-text">{text}</h1>
+        {/if}
+
+    </div>
     <div class="button-block">
         <button class="button-card" on:click={() => openCard(idStr)}>ответить</button>
     </div>
@@ -32,7 +41,6 @@ function openCard(id : number) : any {
     width: 100% !important
     height: 100% !important
 
-
 .button-block
     position: absolute
     width: 100%
@@ -42,7 +50,6 @@ function openCard(id : number) : any {
     align-items: center
     justify-content: center    
     text-align: center 
-
 
 .button-card
     border : gray 1px solid
@@ -60,27 +67,38 @@ function openCard(id : number) : any {
     opacity: 0.8
 
     &:hover
-        transform: scale(1.15)
+        transform: scale(1.05)
         opacity: 0.7
 
-.answer
-    color : black
+.answer-text
+    color: #E0FFFF
     font-size: 30px
     font-family: sans-serif
-    color: #E0FFFF
     text-shadow: 1px 2px 6px rgba(207,95,95,0.24)
+    margin: 0
     font-weight: 600
+
+.answer
+    display: flex
+    width: 90%
+    padding: 20px 15px
+
+    text-align: center
+    margin: 0 auto
+    justify-content: center
 
 .card
     position: relative
-    display: inline-block
 
     justify-content: center
     text-align: center
     padding: 5px 25px
     margin: 10px
-    height: 350px
-    width: 280px
+    height: 300px
+    max-height: 450px
+
+    max-width: 280px
+    width: 250px
     border-radius: 15px
     -webkit-box-shadow: 0px 0px 10px 7px rgba(34, 60, 80, 0.2)
     -moz-box-shadow: 0px 0px 10px 7px rgba(34, 60, 80, 0.2)
