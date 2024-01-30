@@ -9,16 +9,17 @@
 
   let correctAnswer : number = 0;
   let CurrentIndex = 0;
-  let CurrentQuestion = 0;
+  let CurrentQuestion = 1;
 
-  console.log(Questions[CurrentQuestion][0][0].titleBig);
-  console.log(Questions[CurrentQuestion][CurrentIndex].questions);
+  let QuestionLen = Questions[CurrentQuestion].length;
+
+
 
   function giveAnswer(answer : number) {
     if (Questions[CurrentQuestion][CurrentIndex][0].questions[answer].correctAnsw === true) correctAnswer++;
 
     CurrentIndex += 1;
-    if ((CurrentIndex >= Questions[CurrentQuestion].length) && CurrentQuestion + 1 < Questions.length) {
+    if ((CurrentIndex >= QuestionLen) && CurrentQuestion + 1 < Questions.length) {
       CurrentQuestion++;
       CurrentIndex = 0;
     }
@@ -27,17 +28,17 @@
 </script>
 
 <main>    
-  {#if CurrentIndex + 1 <= Questions[CurrentQuestion].length}
+  {#if CurrentIndex + 1 <= QuestionLen}
   <div class="content">
     <Question on:giveAnswer={(e) => giveAnswer(e.detail)} questionsTitle={Questions[CurrentQuestion][CurrentIndex][0].title} questions={Questions[CurrentQuestion][CurrentIndex][0].questions}/>
   </div>
   {:else}
-    <h1>end, you Questions {correctAnswer} / {Questions[CurrentQuestion].length}</h1>
+    <h1>end, you Questions {correctAnswer} / {QuestionLen}</h1>
   {/if}
 
   
 </main>
-<ProcentBar lengQuestion={Questions[CurrentQuestion].length} CurrentIndex={CurrentIndex + 1}/>
+<ProcentBar lengQuestion={QuestionLen} CurrentIndex={CurrentIndex + 1 <= QuestionLen ? CurrentIndex+1 : CurrentIndex }/>
 <!-- <Game/>r -->
 
 <style lang="sass">

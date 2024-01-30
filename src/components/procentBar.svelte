@@ -15,11 +15,11 @@ export let CurrentIndex : number;
 
 <style lang="sass">
 .procentBar
-    position: absolute
+    position: fixed
     width: 100vw
     height: 25px
     background-color: #b4d1b4
-    bottom: 0
+    bottom: -5px
     left: 0
 
 .progress 

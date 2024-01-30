@@ -1,6 +1,11 @@
 <script lang="ts">
 import { createEventDispatcher } from 'svelte'
-import * as images from "images/index"
+
+// import * as images from "images/index"
+// let linkSrcImg : ImageData | any = images[linkSrc] ?? "";
+
+import Image from './Image.svelte'
+
 
 const dispatch = createEventDispatcher<{
     openCard : number
@@ -8,13 +13,9 @@ const dispatch = createEventDispatcher<{
 
 export let idStr : number;
 export let text : string;
-export let linkSrc : any;
+export let linkSrc : string = "";
 
-console.log(linkSrc);
-let linkSrcImg : any = images[linkSrc] ?? "";
-
-
-console.log(linkSrc, linkSrcImg);
+// console.log(linkSrc, linkSrcImg);
 
 function openCard(id : number) : any {
     dispatch("openCard", id)	
@@ -23,8 +24,8 @@ function openCard(id : number) : any {
 
 <div class="card">  
     <div class="answer">
-        {#if linkSrcImg}
-        <img class="imgCard" src={linkSrcImg} alt="">
+        {#if linkSrc}
+            <Image src={`images/${linkSrc}.jpg`}/>
         {/if}
         {#if text}
         <h1 class="answer-text">{text}</h1>
@@ -37,10 +38,6 @@ function openCard(id : number) : any {
 </div>  
 
 <style lang="sass">
-.imgCard  
-    width: 100% !important
-    height: 100% !important
-
 .button-block
     position: absolute
     width: 100%
@@ -80,8 +77,8 @@ function openCard(id : number) : any {
 
 .answer
     display: flex
-    width: 90%
-    padding: 20px 15px
+    width: 95%
+    padding: 2px 5px
 
     text-align: center
     margin: 0 auto
