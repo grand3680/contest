@@ -6,9 +6,7 @@ export let CurrentIndex : number;
 </script>
 
 <div class="procentBar">  
-    <div class="progress" 
-    style="width: {(100 / (lengQuestion)) * CurrentIndex}%;"
-    >
+    <div class="progress" style="width: {(100 / (lengQuestion)) * CurrentIndex}%;">
         {CurrentIndex} / {lengQuestion}
     </div>
 </div>  

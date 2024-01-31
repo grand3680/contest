@@ -14,7 +14,6 @@ console.log(questions);
 function giveAnswer(id : number) : any {
     dispatch("giveAnswer", id)	
 }
-
 </script>
 
 <div class="question">
@@ -25,24 +24,23 @@ function giveAnswer(id : number) : any {
         {/each}
     </span>
 </div>  
-    
-<style lang="sass">
-    .question-title
-        width: 80%
-        margin: 0 auto
-        word-wrap: break-word
-        font-size: 50px
-        color: #133955
-        margin-bottom: 125px
-        font-family: Arial, Helvetica, sans-serif
-    .questions
-        text-align: center
-        justify-content: center 
-        text-align: start
-        flex-wrap: wrap
-        margin: 10px 10px
-        padding: 0 20px
-        display: flex
 
+<style lang="sass">
+.question-title
+    width: 80%
+    margin: 0 auto
+    word-wrap: break-word
+    font-size: 50px
+    color: #133955
+    margin-bottom: 125px
+    font-family: Arial, Helvetica, sans-serif
+.questions
+    text-align: center
+    justify-content: center 
+    text-align: start
+    flex-wrap: wrap
+    margin: 10px 10px
+    padding: 0 20px
+    display: flex
 </style>
     

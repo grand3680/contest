@@ -1,21 +1,14 @@
 <script lang="ts">
 import { createEventDispatcher } from 'svelte'
-
-// import * as images from "images/index"
-// let linkSrcImg : ImageData | any = images[linkSrc] ?? "";
-
 import Image from './Image.svelte'
-
 
 const dispatch = createEventDispatcher<{
     openCard : number
 }>()
 
-export let idStr : number;
-export let text : string;
+export let idStr  : number;
+export let text  : string = "";
 export let linkSrc : string = "";
-
-// console.log(linkSrc, linkSrcImg);
 
 function openCard(id : number) : any {
     dispatch("openCard", id)	
