@@ -1,36 +1,36 @@
 <script lang="ts">
-  import Question from "components/question.svelte";
-  import ProcentBar from "components/procentBar.svelte";
-  import someQuest from "questions/main.json"
+import Question from "components/question.svelte";
+import ProcentBar from "components/procentBar.svelte";
+import someQuest from "questions/main.json"
 
-  const Questions : any[] = someQuest;
+const Questions : any[] = someQuest;
 
-  let correctAnswer : number = 0;
-  let CurrentIndex = 0;
-  let CurrentQuestion = 1;
-  let menuOpen = true;
+let correctAnswer : number = 0;
+let CurrentIndex = 0;
+let CurrentQuestion = 1;
+let menuOpen = true;
 
-  let QuestionLen = Questions[CurrentQuestion].length;
+let QuestionLen = Questions[CurrentQuestion].length;
 
-  function giveAnswer(answer : number) {
-    if (Questions[CurrentQuestion][CurrentIndex][0].questions[answer].correctAnsw === true) correctAnswer++;
+function giveAnswer(answer : number) {
+  if (Questions[CurrentQuestion][CurrentIndex][0].questions[answer].correctAnsw === true) correctAnswer++;
 
-    CurrentIndex += 1;
-  }
+  CurrentIndex += 1;
+}
 
-  function chooseQuestion(countQuest : number) {
-    if (countQuest == CurrentQuestion) {menuOpen = false; return}
-    CurrentQuestion = countQuest;
-    CurrentIndex = 0;
-    correctAnswer = 0;
-    QuestionLen = Questions[CurrentQuestion].length;
+function chooseQuestion(countQuest : number) {
+  if (countQuest == CurrentQuestion) {menuOpen = false; return}
+  CurrentQuestion = countQuest;
+  CurrentIndex = 0;
+  correctAnswer = 0;
+  QuestionLen = Questions[CurrentQuestion].length;
 
-    menuOpen = false;
-  }
+  menuOpen = false;
+}
 
-  function toggleMenu() : void {
-    menuOpen = !menuOpen;
-  }
+function toggleMenu() : void {
+  menuOpen = !menuOpen;
+}
 </script>
 
 <main>    
@@ -59,6 +59,11 @@
 $rounded: 10px
 
 .toggleMenuButton
+  text-align: center
+  position: fixed
+  top: 10px
+  right: 10px
+  cursor: pointer
   width: 70px
   height: 35px
   padding: 0px 10px

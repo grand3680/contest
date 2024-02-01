@@ -1,25 +1,25 @@
 <script lang="ts">
-	import { onMount } from 'svelte'
-	export let src : string;
+import { onMount } from 'svelte'
+export let src : string;
 
-	let loaded  : boolean = false;
-	let failed  : boolean = false;
-	let loading : boolean = false;
+let loaded  : boolean = false;
+let failed  : boolean = false;
+let loading : boolean = false;
 
-	onMount(() => {
-			const img = new Image();
-			img.src = src;
-			loading = true;
+onMount(() => {
+	const img = new Image();
+	img.src = src;
+	loading = true;
 
-			img.onload = () => {
-					loading = false;
-					loaded = true;
-			};
-			img.onerror = () => {
-					loading = false;
-					failed = true;
-			};
-	})
+	img.onload = () => {
+			loading = false;
+			loaded = true;
+	};
+	img.onerror = () => {
+			loading = false;
+			failed = true;
+	};
+})
 </script>
 
 {#if loaded}
