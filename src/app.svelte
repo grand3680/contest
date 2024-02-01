@@ -14,7 +14,6 @@ let QuestionLen = Questions[CurrentQuestion].length;
 
 function giveAnswer(answer : number) {
   if (Questions[CurrentQuestion][CurrentIndex][0].questions[answer].correctAnsw === true) correctAnswer++;
-
   CurrentIndex += 1;
 }
 
@@ -33,21 +32,30 @@ function toggleMenu() : void {
 }
 </script>
 
+<div class="backGround">
+  <div class="el1"></div>
+  <div class="el2"></div>
+  <div class="el3"></div>
+  <div class="el4"></div>
+</div>
 <main>    
+
   {#if CurrentIndex + 1 <= QuestionLen}
   <div class="content">
     <Question on:giveAnswer={(e) => giveAnswer(e.detail)} questionsTitle={Questions[CurrentQuestion][CurrentIndex][0].title} questions={Questions[CurrentQuestion][CurrentIndex][0].questions}/>
   </div>
   {:else}
-    <h1>end, you Questions {correctAnswer} / {QuestionLen}</h1>
+    <h1>Правильных ответов : {correctAnswer} / {QuestionLen}</h1>
   {/if}
   <button on:click={toggleMenu} class="toggleMenuButton">открыть меню</button>
 </main>
 {#if menuOpen}
 <div class="listQuestion">
-  <button on:click={() => chooseQuestion(1)} class="QuestionButton"><h1 class="QuestionTitle">Партизаны СССР</h1></button>
-  <button on:click={() => chooseQuestion(2)} class="QuestionButton"><h1 class="QuestionTitle">Техника Второй Мирвоой Войны</h1></button>
-  <button on:click={() => chooseQuestion(0)} class="QuestionButton"><h1 class="QuestionTitle">Старая Беларусь</h1></button>
+  <div class="titleBlock"><h1 class="titleTest">Тест открой Белорусь через технологии</h1></div>
+  <button on:click={() => chooseQuestion(1)} class="QuestionButton"><h1 class="QuestionTitle">Белорусское партизанское движение</h1></button>
+  <button on:click={() => chooseQuestion(2)} class="QuestionButton"><h1 class="QuestionTitle">Техника Второй Мировой Войны</h1></button>
+  <button on:click={() => chooseQuestion(0)} class="QuestionButton"><h1 class="QuestionTitle">История Беларуси</h1></button>
+  <button on:click={() => chooseQuestion(3)} class="QuestionButton"><h1 class="QuestionTitle">Даты по Второй Мировой Войны</h1></button>
 </div>
 {/if}
 
@@ -57,6 +65,71 @@ function toggleMenu() : void {
 
 <style lang="sass">
 $rounded: 10px
+$elColor1 : #7DDCD6
+$elcolor2 : #75BCEE
+$elcolor3 : #EA559F
+
+
+.titleBlock
+  display: block
+  width: 100%
+  padding: 10px
+
+.backGround
+  position: absolute
+  width: 100%
+
+
+.el1
+  position: relative
+  box-shadow: 0px 0px 100px 100px $elColor1
+  opacity: 0.6
+  top: 0%
+  left: 90%
+  background-color: $elColor1
+  border-radius: 100%
+  width: 20em
+  height: 20em
+  
+
+.el2
+  position: relative
+  box-shadow: 0px 0px 100px 100px $elcolor2
+  opacity: 0.6
+  top: 50%
+  left: 20%
+  background-color: $elcolor2
+  border-radius: 100%
+  width: 20em
+  height: 20em
+
+.el3
+  position: relative
+  box-shadow: 0px 0px 100px 100px $elcolor3
+  opacity: 0.6
+  top: 50%
+  left: 90%
+  background-color: $elcolor3
+  border-radius: 100%
+  width: 20em
+  height: 20em
+.el4
+  position: relative
+  box-shadow: 0px 0px 100px 100px $elcolor3
+  opacity: 0.6
+  top: 50%
+  left: 10%
+  background-color: $elcolor3
+  border-radius: 100%
+  width: 20em
+  height: 20em
+
+
+
+.titleTest
+  display: block
+  font-size: 45px
+  color: red
 
 .toggleMenuButton
   text-align: center
@@ -65,15 +138,16 @@ $rounded: 10px
   right: 10px
   cursor: pointer
   width: 70px
-  height: 35px
+  height: 45px
   padding: 0px 10px
   background-color: #7FFFD4
   border: 1px black solid
 
 .listQuestion
   position: absolute
-  max-width: 500px
-  max-height: 800px
+  max-width: 1500px
+  max-height: 400px
+  display: block
   width: 80%
   height: 80%
   background-color: rgb(64, 224, 208, 0.9)
@@ -85,7 +159,6 @@ $rounded: 10px
   transform: translate(-50%, -50%)
 
 .QuestionButton
-  display: block
   cursor: pointer
   margin: 20px auto
   padding: 15px

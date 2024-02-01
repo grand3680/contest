@@ -452,5 +452,207 @@
                 }
             ]
         }]
+    ],
+    [
+        [{
+            "title": "Великая Отечественная война началась...",
+            "questions": [{
+                    "title": "A. 1 сентября 1939",
+                    "correctAnsw": false
+                },
+                {
+                    "title": "B. 2 сентября 1941",
+                    "correctAnsw": false
+                },
+                {
+                    "title": "C. 22 июня 1941",
+                    "correctAnsw": true
+                },
+                {
+                    "title": "D. 27 июля 1941",
+                    "correctAnsw": false
+                }
+            ]
+        }],
+        [{
+            "title": "Название 'стеклянная артиллерия' связано с использованием:",
+            "questions": [{
+                    "title": "A. химического оружия",
+                    "correctAnsw": false
+                },
+                {
+                    "title": "B. реактивных миномётов",
+                    "correctAnsw": false
+                },
+                {
+                    "title": "C. противотанковых гранат",
+                    "correctAnsw": false
+                },
+                {
+                    "title": "D. бутылок с горючей смесью",
+                    "correctAnsw": true
+                }
+            ]
+        }],
+        [{
+            "title": "14 июля 1941 года под Оршей впервые советскими войсками была использована реактивная артиллерия — знаменитые 'Катюши';. Кто командовал батареей миномётов?",
+            "questions": [{
+                    "title": "A.Генерал-майор Иван Руссиянов",
+                    "correctAnsw": false
+                },
+                {
+                    "title": "B.Полковник Семён Кутепов",
+                    "correctAnsw": false
+                },
+                {
+                    "title": "C.Капитан Иван Флёров",
+                    "correctAnsw": true
+                },
+                {
+                    "title": "D.Лейтенант Андрей Кижеватов",
+                    "correctAnsw": false
+                }
+            ]
+        }],
+        [{
+            "title": "Назовите имя единственного в мире лётчика, совершившего четыре воздушных тарана и оставшегося в живых. Свой первый подвиг он совершил при обороне Гомеля.",
+            "questions": [{
+                    "title": "A.Виталий Попков",
+                    "correctAnsw": true
+                },
+                {
+                    "title": "B.Алексей Маресьев",
+                    "correctAnsw": false
+                },
+                {
+                    "title": "C.Борис Ковзан",
+                    "correctAnsw": true
+                },
+                {
+                    "title": "D.Николай Гастелло",
+                    "correctAnsw": false
+                }
+            ]
+        }],
+        [{
+            "title": "Роман Константина Симонова 'Живые и мёртвые' посвящён событиям битвы за",
+            "questions": [{
+                    "title": "A.Брест",
+                    "correctAnsw": false
+                },
+                {
+                    "title": "B.Гомель",
+                    "correctAnsw": false
+                },
+                {
+                    "title": "C.Минск",
+                    "correctAnsw": true
+                },
+                {
+                    "title": "D.Могилёв",
+                    "correctAnsw": false
+                }
+            ]
+        }],
+        [{
+            "title": "Кто возглавил один из первых партизанских отрядов, сформированный на пятый день войны в Пинском районе?",
+            "questions": [{
+                    "title": "A.Минай Шмырёв",
+                    "correctAnsw": false
+                },
+                {
+                    "title": "B.Фёдор Павловский",
+                    "correctAnsw": false
+                },
+                {
+                    "title": "C.Тихон Бумажков",
+                    "correctAnsw": false
+                },
+                {
+                    "title": "D.Василий Корж",
+                    "correctAnsw": true
+                }
+            ]
+        }],
+        [{
+            "title": "Сколько в Беларуси городов-героев?",
+            "questions": [{
+                    "title": "A.один",
+                    "correctAnsw": true
+                },
+                {
+                    "title": "B.нет вообще",
+                    "correctAnsw": false
+                },
+                {
+                    "title": "C.два",
+                    "correctAnsw": false
+                },
+                {
+                    "title": "D.три",
+                    "correctAnsw": false
+                }
+            ]
+        }],
+        [{
+            "title": "Когда освободили Минск от немецко-фашистских захватчиков?",
+            "questions": [{
+                    "title": "A.28 июля 1945 г",
+                    "correctAnsw": false
+                },
+                {
+                    "title": "B.28 сентября 1944 г",
+                    "correctAnsw": false
+                },
+                {
+                    "title": "C.27 июля 1945 г",
+                    "correctAnsw": false
+                },
+                {
+                    "title": "D.3 июля 1944 г.",
+                    "correctAnsw": true
+                }
+            ]
+        }],
+        [{
+            "title": "Как звали нашего земляка, который при штурме Берлина спас немецкую девочку, но сам был смертельно ранен?",
+            "questions": [{
+                    "title": "A.Алексей Бурдейный",
+                    "correctAnsw": false
+                },
+                {
+                    "title": "B.Пётр Куприянов",
+                    "correctAnsw": false
+                },
+                {
+                    "title": "C.Юрий Смирнов",
+                    "correctAnsw": false
+                },
+                {
+                    "title": "D.Трифон Лукьянович",
+                    "correctAnsw": true
+                }
+            ]
+        }],
+        [{
+            "title": "Кодовое название Белорусской наступательной операции?",
+            "questions": [{
+                    "title": "A.'Багратион'",
+                    "correctAnsw": true
+                },
+                {
+                    "title": "B.'Эдельвейс'",
+                    "correctAnsw": false
+                },
+                {
+                    "title": "C.'Фатерлянд'",
+                    "correctAnsw": false
+                },
+                {
+                    "title": "D.'Тайфун'",
+                    "correctAnsw": false
+                }
+            ]
+        }]
     ]
 ]
